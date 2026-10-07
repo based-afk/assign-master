@@ -143,9 +143,20 @@ npm start
 ```
 
 #### Connecting the Mobile App to the Backend:
-- **Android Emulator:** The app automatically connects to `http://10.0.2.2:5000/api` (the host loopback).
-- **Physical Device / Expo Go:** Ensure your phone is on the same Wi-Fi network as your computer, and update the base URL in `mobile/src/services/api.ts` to your machine's LAN IP (e.g. `http://192.168.1.50:5000/api`).
+- **Deployed Backend (Production):** The mobile app is pre-configured to connect directly to the live Render backend: `https://assign-master.onrender.com/api`.
+- **Android Emulator (Local):** Connects to `http://10.0.2.2:5000/api`.
+- **Physical Device / Expo Go (Local):** Ensure your phone is on the same Wi-Fi network and set base URL in `mobile/src/services/api.ts` to your machine's LAN IP (e.g. `http://192.168.1.50:5000/api`).
 - **Web Preview / iOS Simulator:** Connects to `http://localhost:5000/api`.
+
+---
+
+## 🌐 Live Deployments & Submission Deliverables
+
+- **Live Backend API:** `https://assign-master.onrender.com/api`
+- **Live Web Application:** Deployed on Cloudflare Pages (see Pages dashboard URL)
+- **Mobile EAS Build Link / APK:** `https://expo.dev/accounts/subhasis_1187/projects/focusproject-mobile/builds/248c9528-7121-4778-a855-3111c8998eab`
+- **Database Schema & ER Diagram:** [docs/SCHEMA.md](docs/SCHEMA.md)
+- **REST API Documentation:** [docs/API.md](docs/API.md)
 
 ---
 
