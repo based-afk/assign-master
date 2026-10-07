@@ -1,0 +1,30 @@
+{
+  "name": "focusproject-monorepo",
+  "version": "1.0.0",
+  "description": "Full-Stack Project Management System (Web + Mobile + Backend)",
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:web": "cd web && npm run dev",
+    "dev:mobile": "cd mobile && npm start",
+    "test:backend": "cd backend && npm test",
+    "seed:backend": "cd backend && npm run seed",
+    "build:backend": "cd backend && npm run build",
+    "build:web": "cd web && npm run build",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down"
+  },
+  "keywords": [
+    "project-management",
+    "full-stack",
+    "react",
+    "react-native",
+    "expo",
+    "node",
+    "express",
+    "prisma",
+    "jwt",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT"
+}
