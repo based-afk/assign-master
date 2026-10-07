@@ -15,6 +15,7 @@ import { Loader2 } from 'lucide-react';
 const AppContent: React.FC = () => {
   const { user, isLoading } = useAuth();
   const [currentTab, setCurrentTab] = useState<'dashboard' | 'projects' | 'tasks'>('dashboard');
+  const [refreshKey, setRefreshKey] = useState(0);
   const [selectedProjectIdForTasks, setSelectedProjectIdForTasks] = useState<string | undefined>(undefined);
 
   // Global quick-add modal controls
@@ -78,6 +79,7 @@ const AppContent: React.FC = () => {
       <main className="main-content">
         {currentTab === 'dashboard' && (
           <DashboardView
+            key={refreshKey}
             onNavigateToProjects={() => setCurrentTab('projects')}
             onNavigateToTasks={() => {
               setSelectedProjectIdForTasks(undefined);
@@ -120,7 +122,7 @@ const AppContent: React.FC = () => {
         projects={projectsList}
         defaultProjectId={selectedProjectIdForTasks}
         onClose={() => setIsTaskModalOpen(false)}
-        onSaved={() => {}}
+        onSaved={() => { setRefreshKey(k => k + 1); }}
       />
     </div>
   );
