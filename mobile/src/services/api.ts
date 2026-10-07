@@ -1,9 +1,7 @@
 import { Platform } from 'react-native';
 import { StorageService } from './storage';
 
-// Default host based on platform
-const DEFAULT_HOST =
-  Platform.OS === 'android' ? 'http://10.0.2.2:5000/api' : 'http://localhost:5000/api';
+const DEFAULT_HOST = 'https://assign-master.onrender.com/api';
 
 let customApiUrl: string | null = null;
 
