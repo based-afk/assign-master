@@ -14,6 +14,7 @@ import { mobileApi } from '../services/api';
 import { StatusBadge } from '../components/StatusBadge';
 import { PriorityBadge } from '../components/PriorityBadge';
 import { OfflineBanner } from '../components/OfflineBanner';
+import { useAuth } from '../context/AuthContext';
 
 interface DashboardScreenProps {
   onNavigateToProjects: () => void;
@@ -28,6 +29,7 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
   onOpenNewTask,
   onOpenNewProject,
 }) => {
+  const { logout } = useAuth();
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -106,6 +108,10 @@ export const DashboardScreen: React.FC<DashboardScreenProps> = ({
             <TouchableOpacity style={[styles.actionBtn, styles.actionBtnPrimary]} onPress={onOpenNewTask}>
               <Ionicons name="add" size={18} color="#FFFFFF" />
               <Text style={[styles.actionBtnText, { color: '#FFFFFF' }]}>+ Task</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.actionBtn, { backgroundColor: '#FF3B30', borderColor: '#FF3B30' }]} onPress={logout}>
+              <Ionicons name="log-out-outline" size={16} color="#FFFFFF" />
+              <Text style={[styles.actionBtnText, { color: '#FFFFFF' }]}>Logout</Text>
             </TouchableOpacity>
           </View>
         </View>
